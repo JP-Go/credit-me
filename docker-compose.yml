@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mysql_db:
+    image: mysql
+    container_name: credit_me_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /db-env
+    restart: always
+    volumes:
+      - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+      - .docker/db-env:/db-env
