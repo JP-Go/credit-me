@@ -13,3 +13,6 @@ spring:
   devtools:
     restart:
       enabled: true
+springdoc:
+  swagger-ui:
+    path: /docs/swagger-ui.html
